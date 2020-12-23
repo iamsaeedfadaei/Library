@@ -1,0 +1,10 @@
+{% load static %}
+
+{% block sidebar %}
+    <br>
+    <ul class="sidebar-nav">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'books' %}">All books</a></li>
+        <li><a href="{% url 'authors' %}">All Authors</a></li>
+    </ul>
+{% endblock %}

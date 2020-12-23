@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<br>
+<h1>Author List:</h1>
+<br>
+<ul>
+    {% if author_list %}
+    {% for author in author_list %}
+    <li>
+        <a href="{{ author.get_absolute_url }}">{{ author.first_name }} {{ author.last_name }}</a>
+    </li>
+    {% endfor %}
+    {% else %}
+    <h4>
+        <p>There is no Author in our library!</p>
+        <p>Come back later!</p>
+    </h4>
+    {% endif %}
+</ul>
+{% endblock %}
