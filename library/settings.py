@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'r#p-tilho^k*1h4!-@8vko#&2ziliwm_w*tse_-!juoon*-ssp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*', ]
 
@@ -74,13 +74,20 @@ WSGI_APPLICATION = 'library.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'librarydb',
+#          'USER': 'postgres',
+#          'PASSWORD': 'postgres',
+#          'HOST': 'localhost',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'librarydb',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'postgres',
-        # 'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
